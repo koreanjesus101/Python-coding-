@@ -1,0 +1,29 @@
+civic_number=input("enter civic number: ")
+street_name=input("enter street name:")
+city_name=input("enter city name: ")
+province_code=input("enter province name: ")
+postal_code=input("enter postal code: ")
+customer_name=input("enter customer name: ")
+print("Ship to:")
+print(name, civic_number)
+print(street_name)
+print(city_name, province_code, postal_code)
+
+distance = float(input("enter distance in KM:"))
+Fuel = float(input("enter cost of fuel in ($/L):"))
+average_fuel = (6.9/100)
+
+result = (distance *Fuel * average_fuel)
+  print("total cost:$", result)
+
+
+name = input(What is your name?")
+  print(f"Hello {name}, Welcome to SAIT!")
+
+
+sale = input("How much is the sale?")
+sale = float(sale)
+discount = input("how much is the discount?:%")
+discount = sale * flat(sale) / 100
+print("total after sale is=")
+
