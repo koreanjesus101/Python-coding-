@@ -1,0 +1,13 @@
+import time
+
+count= 17
+while true:
+  print(f"fa ammo: {count}")
+  if count > 0: 
+    count -= 1
+    time.sleep(o.1)
+else:
+  count = 17
+  print("reload)
+  time.slee(2) 
+  
