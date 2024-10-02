@@ -27,3 +27,36 @@ discount = input("how much is the discount?:%")
 discount = sale * flat(sale) / 100
 print("total after sale is=")
 
+term = float(input("Enter GIC term in years: "))
+amount = float(input("Enter amount to invest: "))
+if term <= 1:
+  interest_rate = 0.049
+elif term <= 2:
+  interest_rate = 0.041
+elif term <= 3:
+  interest_rate = 0.04
+elif term <= 4:
+  interest_rate = 0.038
+elif term <= 5:
+  interest_rate = 0.0375
+
+#lab 2 Question 1
+total_interest = amount * interest_rate * term
+print("interest at the end of the term:$", total_interest)
+
+total_amount = amount + total_interest
+print("total at the end of the term:$", total_amount)
+
+print("Manna Corp. Retirment Eligilbilty Checker")
+age = int(input("enter age:"))
+service = int(input("enter years of service:"))
+
+#lab2 question 2 
+if (age < 50):
+  print("you are not eligible for retirement")
+elif (age >= 65 or age + service >= 80):
+  print("you are eligible for retirement with full pension benefits")
+elif (age >= 64 or age + service < 80):
+  print("you are eligible for retirement with discounted pension benefits")
+
+
