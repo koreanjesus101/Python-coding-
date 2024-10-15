@@ -1,0 +1,73 @@
+SAFEST_CITIES = (
+    "Tokyo, Japan",
+    "Singapore, Singapore",
+    "Osaka,Japan",
+    "Amsterdam,Netherlands",
+    "Sydney,Australia",
+    "Toronto, Canada",
+    "Washington D.C., United States",
+    "Copenhagen, Denmark",
+    "Seoul, South Korea",
+    "Melbourne, Australia")
+
+
+user_input = input("Enter a country: ").strip().lower()
+
+found_cities = []
+index = 1  # Manual counter for rank
+for city in SAFEST_CITIES:
+    city_name, country_name = city.split(",")
+    if country_name.strip().lower() == user_input:
+        found_cities.append(f"Number #{index} of {len(SAFEST_CITIES)}: {city_name.strip()}, {country_name.strip()}")
+    index += 1  # Increment the counter manually
+
+
+#checking to see if more than 1 city is listed "there is" <1 "there are" >1
+if found_cities:
+  if len(found_cities) == 1:
+    print(f"There is {len(found_cities)} city in {user_input.title()} among the top SAFEST cities in the world")
+  for city in found_cities:
+    print(city)
+  if len(found_cities) > 1:
+    print(f"There are {len(found_cities)} cities in {user_input.title()} among the top 10 SAFEST cities in the world")
+else:
+    print(f"There are 0 cities found in {user_input.title()} among the top 10 SAFEST cities in the world")
+
+
+
+
+
+student_scores = {}
+
+while True:
+    name = input("Student's name (or 'END' to finish):").strip()
+    if name == "END":
+        break
+    score = input("Enter score:").strip()
+
+    # Check if the score is a valid floating-point number
+    if score.replace(".", "", 1).isdigit():
+        student_scores[name] = float(score)
+
+if student_scores:
+    average_score = sum(student_scores.values()) / len(student_scores)
+
+    student_list = list(student_scores.items())
+    highest_scorer, highest_score = student_list[0]
+
+    # Find the student with the highest score
+    for name, score in student_scores.items():
+        if score > highest_score:
+            highest_scorer = name
+            highest_score = score
+
+    # Display results
+    print(f"Class average score is {average_score:.2f}")
+    print(f"Highest score of {highest_score} achieved by {highest_scorer}!")
+
+    # Display the table of student names and scores
+    print(f"{'Student Name:':<15}{'Grade:':<15}")
+    print("---------------","-----")
+
+    for name, score in student_scores.items():
+        print(f"{name:<15}{score:<10.2f}")
